@@ -1,20 +1,17 @@
 #include <iostream>
-#include <fstream>
-#include <nlohmann/json.hpp>
+#include "common/Graph.hpp"
+#include "io/GraphBuilder.hpp"
 
-using json = nlohmann::json;
-
-int main(int argc, char *argv[]) {
-    std::ifstream input_graph(argv[1]);
-    json graph;
-    input_graph >> graph;
-
-    std::cout << graph["vertex_count"] << '\n';
-    std::cout << graph["start"] << '\n';
-    for (auto v : graph["matrix"]) {
-        for (auto c : v) {
-            std::cout << c << ' ';
+int main([[maybe_unused]] int argc, char *argv[]) {
+    const auto graph_builder = graphs::io::GraphBuilder(argv[1]);
+    if (graph_builder.is_json_valid()) {
+        const auto graph = graph_builder.build();
+        std::cout << graph.vertex_count << ' ' << graph.start_vertex << '\n';
+        for (auto v : graph.matrix) {
+            for (auto u : v) {
+                std::cout << u << ' ';
+            }
+            std::cout << '\n';
         }
-        std::cout << '\n';
     }
 }
