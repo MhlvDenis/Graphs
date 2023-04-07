@@ -8,6 +8,14 @@
 namespace graphs::algorithms {
 
     common::Result FordBellman(const common::Graph& graph) {
+        if (graph.vertex_count == 0) {
+            return {
+                    graph.vertex_count,
+                    graph.start_vertex,
+                    {}
+            };
+        }
+
         struct Edge {
             int32_t u, v;
             int64_t w;
@@ -23,7 +31,7 @@ namespace graphs::algorithms {
         }
 
         std::vector<int64_t> distances(graph.vertex_count, common::INFINITY_LENGTH);
-        distances[graph.start_vertex] = 0;
+        distances[graph.start_vertex - 1] = 0;
         for (int k = 0; k < graph.vertex_count - 1; ++k) {
             for (const auto& [u, v, w] : edges) {
                 if (distances[u] != common::INFINITY_LENGTH &&
