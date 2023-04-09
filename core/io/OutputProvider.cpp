@@ -1,5 +1,6 @@
 #include "OutputProvider.hpp"
-#include "../json/JsonBuilder.hpp"
+
+#include <json/JsonBuilder.hpp>
 
 #include <iostream>
 
@@ -19,4 +20,4 @@ namespace graphs::io {
         out << json::JsonBuilder(result).build().dump(2) << '\n';
     }
 
-};
+}

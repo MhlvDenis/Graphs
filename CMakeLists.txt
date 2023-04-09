@@ -3,25 +3,31 @@ project(Graphs)
 
 set(CMAKE_CXX_STANDARD 17)
 
-include_directories(deps/googletest/googlemock/include)
-include_directories(deps/googletest/googletest/include)
-include_directories(deps/json/include)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-add_executable(App
-        main.cpp
+# Testing framework
+set(DIRECTORY_GTEST ${PROJECT_SOURCE_DIR}/deps/googletest)
+set(INCLUDE_GTEST ${DIRECTORY_GTEST}/googletest/include)
+set(LIBRARY_GTEST gtest_main)
 
-        algorithms/Algorithms.hpp
-        algorithms/Dijkstra.cpp
-        algorithms/FordBellman.cpp
+# JSON parce library
+set(DIRECTORY_JSON ${PROJECT_SOURCE_DIR}/deps/json)
+set(INCLUDE_JSON ${DIRECTORY_JSON}/include)
 
-        common/Graph.hpp
-        common/Result.hpp
-        common/Consts.hpp
+message(STATUS "JSON include: ${INCLUDE_JSON}")
 
-        io/OutputProvider.cpp
-        io/OutputProvider.hpp
+# Core library
+set(DIRECTORY_CORE ${PROJECT_SOURCE_DIR}/core)
+set(INCLUDE_CORE ${DIRECTORY_CORE})
+set(LIBRARY_CORE core)
 
-        json/JsonBuilder.cpp
-        json/JsonBuilder.hpp
-        json/GraphBuilder.cpp
-        json/GraphBuilder.hpp)
+add_subdirectory(${DIRECTORY_CORE})
+message(STATUS "Core include: ${INCLUDE_CORE}")
+message(STATUS "Core library: ${LIBRARY_CORE}")
+
+# App binaries
+set(DIRECTORY_APP ${PROJECT_SOURCE_DIR}/app)
+set(EXECUTABLE_APP app)
+
+add_subdirectory(${DIRECTORY_APP})
+message(STATUS "App executable: ${EXECUTABLE_APP}")

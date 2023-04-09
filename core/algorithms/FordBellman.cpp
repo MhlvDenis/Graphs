@@ -1,6 +1,6 @@
-#include "../common/Graph.hpp"
-#include "../common/Result.hpp"
-#include "../common/Consts.hpp"
+#include <common/Graph.hpp>
+#include <common/Result.hpp>
+#include <common/Consts.hpp>
 
 #include <cinttypes>
 #include <vector>

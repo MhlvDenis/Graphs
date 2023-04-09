@@ -1,8 +1,8 @@
 #ifndef GRAPHS_ALGORITHMS_HPP
 #define GRAPHS_ALGORITHMS_HPP
 
-#include "../common/Graph.hpp"
-#include "../common/Result.hpp"
+#include <common/Graph.hpp>
+#include <common/Result.hpp>
 
 namespace graphs::algorithms {
 

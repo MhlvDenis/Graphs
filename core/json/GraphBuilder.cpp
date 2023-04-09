@@ -1,6 +1,6 @@
 #include "GraphBuilder.hpp"
 
-#include "../common/Consts.hpp"
+#include <common/Consts.hpp>
 
 #include <cinttypes>
 #include <fstream>

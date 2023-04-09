@@ -1,7 +1,7 @@
 #ifndef GRAPHS_JSONBUILDER_HPP
 #define GRAPHS_JSONBUILDER_HPP
 
-#include "../common/Result.hpp"
+#include <common/Result.hpp>
 
 #include <nlohmann/json.hpp>
 

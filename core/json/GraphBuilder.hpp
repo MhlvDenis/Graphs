@@ -1,10 +1,10 @@
 #ifndef GRAPHS_GRAPHBUILDER_HPP
 #define GRAPHS_GRAPHBUILDER_HPP
 
-#include "../common/Graph.hpp"
+#include <common/Graph.hpp>
 
 #include <filesystem>
-#include "nlohmann/json.hpp"
+#include <nlohmann/json.hpp>
 
 namespace graphs::json {
 

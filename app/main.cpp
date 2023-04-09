@@ -1,8 +1,6 @@
-#include "common/Graph.hpp"
-#include "json/JsonBuilder.hpp"
-#include "json/GraphBuilder.hpp"
-#include "algorithms/Algorithms.hpp"
-#include "io/OutputProvider.hpp"
+#include <json/GraphBuilder.hpp>
+#include <algorithms/Algorithms.hpp>
+#include <io/OutputProvider.hpp>
 
 #include <iostream>
 

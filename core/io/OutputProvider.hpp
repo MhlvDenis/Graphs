@@ -1,7 +1,7 @@
 #ifndef GRAPHS_OUTPUTPROVIDER_HPP
 #define GRAPHS_OUTPUTPROVIDER_HPP
 
-#include "../common/Result.hpp"
+#include <common/Result.hpp>
 
 #include <fstream>
 
