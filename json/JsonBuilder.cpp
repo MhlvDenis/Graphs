@@ -11,7 +11,7 @@ namespace graphs::json {
         nlohmann::json result_json = {
                 {"vertex_count", result.vertex_count},
                 {"start_vertex", result.start_vertex},
-                {"distances", {}}
+                {"distances", nlohmann::json(nlohmann::json::value_type::array())}
         };
         for (const auto& dist : result.distances) {
             result_json["distances"].push_back(dist);
