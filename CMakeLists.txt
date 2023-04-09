@@ -31,3 +31,8 @@ set(EXECUTABLE_APP app)
 
 add_subdirectory(${DIRECTORY_APP})
 message(STATUS "App executable: ${EXECUTABLE_APP}")
+
+# Tests
+set(DIRECTORY_TEST ${PROJECT_SOURCE_DIR}/test)
+set(EXECUTABLE_TEST test)
+add_subdirectory(${DIRECTORY_TEST})
