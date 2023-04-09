@@ -7,7 +7,7 @@
 #include <iostream>
 #include <vector>
 
-namespace graphs::io {
+namespace graphs::json {
 
     GraphBuilder::GraphBuilder(const std::filesystem::path& path) {
         std::ifstream input_json(path);

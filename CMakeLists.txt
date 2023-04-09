@@ -18,5 +18,7 @@ add_executable(App
         common/Result.hpp
         common/Consts.hpp
 
-        io/GraphBuilder.cpp
-        io/GraphBuilder.hpp)
+        json/JsonBuilder.cpp
+        json/JsonBuilder.hpp
+        json/GraphBuilder.cpp
+        json/GraphBuilder.hpp)

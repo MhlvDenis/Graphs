@@ -4,15 +4,13 @@
 #include "../common/Graph.hpp"
 
 #include <filesystem>
-#include <nlohmann/json.hpp>
+#include "nlohmann/json.hpp"
 
-using json = nlohmann::json;
-
-namespace graphs::io {
+namespace graphs::json {
 
     class GraphBuilder {
     private:
-        json graph_json;
+        nlohmann::json graph_json;
 
     public:
         explicit GraphBuilder(const std::filesystem::path& path);

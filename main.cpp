@@ -1,23 +1,18 @@
 #include <iostream>
 #include "common/Graph.hpp"
-#include "io/GraphBuilder.hpp"
+#include "json/JsonBuilder.hpp"
+#include "json/GraphBuilder.hpp"
 #include "algorithms/Algorithms.hpp"
 
 int main([[maybe_unused]] int argc, char *argv[]) {
-    const auto graph_builder = graphs::io::GraphBuilder(argv[1]);
+    const auto graph_builder = graphs::json::GraphBuilder(argv[1]);
     if (graph_builder.is_json_valid()) {
         const auto graph = graph_builder.build();
 
         const auto result = graphs::algorithms::Dijkstra(graph);
-        for (auto i : result.distances) {
-            std::cout << i << ' ';
-        }
-        std::cout << '\n';
-
         const auto result1 = graphs::algorithms::FordBellman(graph);
-        for (auto i : result1.distances) {
-            std::cout << i << ' ';
-        }
-        std::cout << '\n';
+
+        std::cout << graphs::json::JsonBuilder(result).build().dump(2) << '\n';
+        std::cout << graphs::json::JsonBuilder(result1).build().dump(2) << '\n';
     }
 }
