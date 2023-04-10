@@ -2,8 +2,8 @@ set(
         SOURCES_TEST_CORE
 
         core/TestAlgorithms.cpp
-        core/TestIO.cpp
-        core/TestJson.cpp)
+        core/TestJson.cpp
+        core/TestIO.cpp)
 
 set(
         SOURCES_TEST

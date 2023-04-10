@@ -10,6 +10,10 @@ set(DIRECTORY_GTEST ${PROJECT_SOURCE_DIR}/deps/googletest)
 set(INCLUDE_GTEST ${DIRECTORY_GTEST}/googletest/include)
 set(LIBRARY_GTEST gtest_main)
 
+add_subdirectory(${DIRECTORY_GTEST})
+message(STATUS "Gtest include: ${INCLUDE_GTEST}")
+message(STATUS "Gtest library: ${LIBRARY_GTEST}")
+
 # JSON parce library
 set(DIRECTORY_JSON ${PROJECT_SOURCE_DIR}/deps/json)
 set(INCLUDE_JSON ${DIRECTORY_JSON}/include)
